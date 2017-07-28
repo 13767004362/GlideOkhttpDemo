@@ -17,6 +17,7 @@ internal class OkHttpProvider{
             var  loggingInterceptor= HttpLoggingInterceptor()
             loggingInterceptor.level= HttpLoggingInterceptor.Level.BODY
             builder.addInterceptor(loggingInterceptor)
+
             return builder.build()
         }
     }

@@ -37,10 +37,10 @@ class OkHttpStreamFetcher(var client: Call.Factory, var url: GlideUrl) : DataFet
                 callback.onLoadFailed(e)
             }
             override fun onResponse(call: Call, response: Response) {
-                responseBody = responseBody
+                responseBody= response.body()
                 if (response.isSuccessful) {//请求成功
                     var contentLength = responseBody!!.contentLength()
-                    stream = ContentLengthInputStream.obtain(responseBody!!.byteStream(), contentLength)
+                    stream = ContentLengthInputStream.obtain(responseBody?.byteStream(), contentLength)
                     callback.onDataReady(stream)
                 } else {//请求失败
                     callback.onLoadFailed(HttpException(response.message(), response.code()))
@@ -59,11 +59,11 @@ class OkHttpStreamFetcher(var client: Call.Factory, var url: GlideUrl) : DataFet
      */
     override fun cleanup() {
        try {
-            stream!!.close()
+            stream?.close()
        }catch (e: IOException){
            e.printStackTrace()
        }
-        responseBody!!.close()
+        responseBody?.close()
     }
 
     override fun getDataClass(): Class<InputStream> {

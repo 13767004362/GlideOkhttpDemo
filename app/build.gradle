@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'//扩展插件
+apply plugin: 'kotlin-kapt'//kapt3插件
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
@@ -20,9 +21,7 @@ android {
     }
 }
 //kapt添加的kotlin
-kapt {
-    generateStubs = true
-}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

@@ -2,12 +2,12 @@ package com.xingen.glideokhttp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //GlideApp.with(this).load("https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white_fe6da1ec.png").into(main_iv)
-
+      GlideApp.with(this).load("https://github.com/bumptech/glide/raw/master/static/glide_logo.png").into(main_iv)
     }
 }
