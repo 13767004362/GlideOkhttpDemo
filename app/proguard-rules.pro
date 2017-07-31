@@ -31,3 +31,7 @@
     **[] $VALUES;
     public *;
 }
+#OkHttp库的混淆
+-dontwarn okio.**
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault

@@ -32,7 +32,7 @@ class OkHttpStreamFetcher(var client: Call.Factory, var url: GlideUrl) : DataFet
         }
         var request = requestBuilder.build()
         call = client.newCall(request)
-        call!!.enqueue(object : Callback {
+        call?.enqueue(object : Callback {
             override fun onFailure(call: Call?, e: IOException) {
                 callback.onLoadFailed(e)
             }

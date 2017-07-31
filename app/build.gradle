@@ -32,7 +32,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     //Glide v4
-    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
     //在Kotlin中Glide的注解,kapt是 Kotlin内置的注解处理器
     kapt 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     //OkHttp3

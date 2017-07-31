@@ -18,7 +18,6 @@ internal class CustomAppGlideModule : AppGlideModule() {
     override fun applyOptions(context: android.content.Context?, builder: com.bumptech.glide.GlideBuilder) {
         builder.setMemoryCache(LruResourceCache(cacheSize))
     }
-
     /**
      * 注册一个String类型的BaseGlideUrlLoader
      */
@@ -26,12 +25,10 @@ internal class CustomAppGlideModule : AppGlideModule() {
         registry.append(String::class.java, java.io.InputStream::class.java,
                 CustomBaseGlideUrlLoader.Companion.factory)
     }
-
     /**
      * 关闭解析AndroidManifest
      */
     override fun isManifestParsingEnabled(): Boolean {
         return false
     }
-
 }
